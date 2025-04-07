@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyTextRPG
+namespace MyTextRPG.Scenes
 {
     public abstract class BaseScene
     {

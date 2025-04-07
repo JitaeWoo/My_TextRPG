@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyTextRPG.Scenes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,10 @@ namespace MyTextRPG
         private static bool _gameOver;
         public static void Run()
         {
+            _sceneDic["Title"] = new TitleScene();
+
+            _curScene = _sceneDic["Title"];
+
             _gameOver = false;
 
             while (!_gameOver)
@@ -29,9 +34,9 @@ namespace MyTextRPG
             PrintGameOver();
         }
 
-        public static void ChangeScene(BaseScene scene)
+        public static void ChangeScene(string scene)
         {
-            _curScene = scene;
+            _curScene = _sceneDic[scene];
         }
 
         public static void GameOver()
