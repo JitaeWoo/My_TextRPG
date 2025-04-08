@@ -23,9 +23,9 @@ namespace MyTextRPG.Scenes
         private void PrintMap()
         {
             Console.SetCursorPosition(0, 0);
-            for(int y = 0; y < mapData.GetLength(0); y++)
+            for(int y = 0; y < mapData.Length; y++)
             {
-                for(int x = 0; x < mapData.GetLength(1); x++)
+                for(int x = 0; x < mapData[0].Length; x++)
                 {
                     Console.Write(mapData[y][x]);
                 }
