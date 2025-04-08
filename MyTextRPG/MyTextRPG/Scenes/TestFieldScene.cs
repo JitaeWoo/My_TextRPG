@@ -30,7 +30,6 @@ namespace MyTextRPG.Scenes
                 }
             }
 
-            objects = new List<GameObject>();
             objects.Add(new Portal("TestField2", new Vector2(3, 3)));
         }
 

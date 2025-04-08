@@ -11,7 +11,7 @@ namespace MyTextRPG.Scenes
         protected String[] MapData;
         public bool[,] IsWall { get; protected set; }
 
-        protected List<GameObject> objects;
+        protected List<GameObject> objects = new List<GameObject>();
 
         public override void Render()
         {

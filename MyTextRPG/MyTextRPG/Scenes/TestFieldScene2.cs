@@ -29,8 +29,6 @@ namespace MyTextRPG.Scenes
                     IsWall[y, x] = MapData[y][x] == '#';
                 }
             }
-
-            objects = new List<GameObject>();
         }
 
         public override void Enter()
