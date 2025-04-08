@@ -9,7 +9,7 @@ namespace MyTextRPG.Scenes
     public abstract class FieldScene : BaseScene
     {
         protected String[] MapData;
-        protected bool[,] IsWall;
+        public bool[,] IsWall;
 
         public override void Render()
         {

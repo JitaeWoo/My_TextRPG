@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MyTextRPG.Scenes;
 
 namespace MyTextRPG
 {
@@ -39,7 +40,10 @@ namespace MyTextRPG
                     break;
             }
 
-            _position = targetPosition;
+            if ((Game.CurScene as FieldScene).IsWall[targetPosition.y, targetPosition.x] == false)
+            {
+                _position = targetPosition;
+            }
         }
     }
 }

@@ -11,13 +11,14 @@ namespace MyTextRPG
     {
         private static Dictionary<string, BaseScene> _sceneDic = new Dictionary<string, BaseScene>();
         private static BaseScene _curScene;
+        public static BaseScene CurScene => _curScene;
         private static bool _gameOver;
         private static Player _player;
         public static Player Player => _player;
         public static void Run()
         {
             Start();
-
+            
             while (!_gameOver)
             {
                 Console.Clear();
@@ -34,6 +35,8 @@ namespace MyTextRPG
 
         private static void Start()
         {
+            Console.CursorVisible = false;
+
             _sceneDic["Title"] = new TitleScene();
             _sceneDic["TestField"] = new TestFieldScene();
 
