@@ -14,11 +14,7 @@ namespace MyTextRPG
         private static bool _gameOver;
         public static void Run()
         {
-            _sceneDic["Title"] = new TitleScene();
-
-            _curScene = _sceneDic["Title"];
-
-            _gameOver = false;
+            Start();
 
             while (!_gameOver)
             {
@@ -32,6 +28,15 @@ namespace MyTextRPG
             }
 
             PrintGameOver();
+        }
+
+        private static void Start()
+        {
+            _sceneDic["Title"] = new TitleScene();
+
+            _curScene = _sceneDic["Title"];
+
+            _gameOver = false;
         }
 
         public static void ChangeScene(string scene)
