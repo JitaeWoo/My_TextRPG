@@ -33,6 +33,7 @@ namespace MyTextRPG
         private static void Start()
         {
             _sceneDic["Title"] = new TitleScene();
+            _sceneDic["TestField"] = new TestFieldScene();
 
             _curScene = _sceneDic["Title"];
 
