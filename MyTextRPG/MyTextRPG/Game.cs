@@ -46,7 +46,9 @@ namespace MyTextRPG
 
         public static void ChangeScene(string scene)
         {
+            _curScene.End();
             _curScene = _sceneDic[scene];
+            _curScene.Enter();
         }
 
         public static void GameOver()
