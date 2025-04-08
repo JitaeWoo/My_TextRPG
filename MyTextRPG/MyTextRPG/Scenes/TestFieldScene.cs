@@ -10,7 +10,7 @@ namespace MyTextRPG.Scenes
     {
         public TestFieldScene()
         {
-            mapData = new string[]
+            MapData = new string[]
             {
                 "########",
                 "#      #",
@@ -20,12 +20,12 @@ namespace MyTextRPG.Scenes
                 "########"
             };
 
-            isWall = new bool[mapData.Length, mapData[0].Length];
-            for(int y = 0; y < isWall.GetLength(0); y++)
+            IsWall = new bool[MapData.Length, MapData[0].Length];
+            for(int y = 0; y < IsWall.GetLength(0); y++)
             {
-                for(int x = 0; x < isWall.GetLength(1); x++)
+                for(int x = 0; x < IsWall.GetLength(1); x++)
                 {
-                    isWall[y, x] = mapData[y][x] == '#';
+                    IsWall[y, x] = MapData[y][x] == '#';
                 }
             }
         }

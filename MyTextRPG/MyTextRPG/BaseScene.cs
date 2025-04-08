@@ -8,12 +8,12 @@ namespace MyTextRPG
 {
     public abstract class BaseScene
     {
-        protected ConsoleKey _input;
+        protected ConsoleKey InputKey;
         public abstract void Render();
 
         public void Input()
         {
-            _input = Console.ReadKey(true).Key;
+            InputKey = Console.ReadKey(true).Key;
         }
 
         public abstract void Result();
