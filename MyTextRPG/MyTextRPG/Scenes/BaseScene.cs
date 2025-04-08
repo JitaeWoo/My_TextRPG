@@ -13,7 +13,7 @@ namespace MyTextRPG.Scenes
 
         public void Input()
         {
-            _input = Console.ReadKey().Key;
+            _input = Console.ReadKey(true).Key;
         }
 
         public abstract void Result();
