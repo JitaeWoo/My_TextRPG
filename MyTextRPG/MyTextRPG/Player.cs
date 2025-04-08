@@ -12,6 +12,9 @@ namespace MyTextRPG
         private Vector2 _position;
         public Vector2 Position { get { return _position; } set { _position = value; } }
 
+        private Inventory _inventory = new Inventory();
+        public Inventory Inven => _inventory;
+
         public void Print()
         {
             Console.SetCursorPosition(_position.x, _position.y);

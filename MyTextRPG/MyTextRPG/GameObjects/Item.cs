@@ -18,7 +18,7 @@ namespace MyTextRPG.GameObjects
 
         public override void Interact()
         {
-            // TODO : 플레이어 인벤토리에 추가
+            Game.Player.Inven.Add(this);
         }
 
         public abstract void Use();
