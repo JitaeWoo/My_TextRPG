@@ -17,5 +17,9 @@ namespace MyTextRPG
         }
 
         public abstract void Result();
+
+        public virtual void Enter() { }
+
+        public virtual void End() { }
     }
 }
