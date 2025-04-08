@@ -16,7 +16,7 @@ namespace MyTextRPG.GameObjects
             _nextScene = nextScene;
         }
 
-        public override void Interact(Player player)
+        public override void Interact()
         {
             Game.ChangeScene(_nextScene);
         }

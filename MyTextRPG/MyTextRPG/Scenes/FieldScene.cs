@@ -33,7 +33,7 @@ namespace MyTextRPG.Scenes
             {
                 if(Game.Player.Position == obj.Position)
                 {
-                    obj.Interact(Game.Player);
+                    obj.Interact();
                     if (obj.IsOnce)
                     {
                         objects.Remove(obj);
