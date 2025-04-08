@@ -1,4 +1,5 @@
 ﻿using MyTextRPG.GameObjects;
+using MyTextRPG.GameObjects.Items;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +32,7 @@ namespace MyTextRPG.Scenes
             }
 
             objects.Add(new Portal("TestField2", new Vector2(3, 3)));
+            objects.Add(new Potion(new Vector2(3, 2)));
         }
 
         public override void Enter()

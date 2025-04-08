@@ -16,6 +16,8 @@ namespace MyTextRPG.Scenes
         public override void Render()
         {
             PrintMap();
+            Console.WriteLine();
+            Game.Player.Inven.PrintAll();
 
             foreach (GameObject obj in objects)
             {
