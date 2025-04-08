@@ -16,7 +16,7 @@ namespace MyTextRPG.GameObjects.Items
 
         public override void Use()
         {
-            // TODO : 플레이어 체력 회복
+            Game.Player.Heal(10);
         }
     }
 }
