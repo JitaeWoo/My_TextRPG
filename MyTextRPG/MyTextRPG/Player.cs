@@ -20,10 +20,17 @@ namespace MyTextRPG
         private int _maxHp;
         public int MaxHp => _maxHp;
 
+        private int _attack;
+        public int Attack => _attack;
+
+        private int _defense;
+
         public Player()
         {
             _maxHp = 100;
             _curHp = _maxHp;
+            _attack = 10;
+            _defense = 3;
         }
 
         public void Print()
@@ -44,6 +51,8 @@ namespace MyTextRPG
 
         public void TakeDamage(int amount)
         {
+            amount -= _defense;
+
             if(amount > 0)
             {
                 _curHp = Math.Max(_curHp - amount, 0);
