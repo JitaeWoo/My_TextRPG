@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyTextRPG.Scenes
 {
-    public class FieldScene : BaseScene
+    public abstract class FieldScene : BaseScene
     {
         protected String[] mapData;
         protected bool[,] isWall;
