@@ -8,12 +8,20 @@ namespace MyTextRPG.GameObjects
 {
     public abstract class Item : GameObject
     {
+        public enum Types
+        {
+            Consumable, Armor, Weapon
+        }
+
+        private Types _type;
+        public Types Type => _type;
         public string Name { get; protected set; }
         public string Description { get; protected set; }
 
-        public Item(Vector2 position) 
+        public Item(Vector2 position, Types type) 
             : base(ConsoleColor.Yellow, 'I', position, true)
         {
+            _type = type;
         }
 
         public override void Interact()

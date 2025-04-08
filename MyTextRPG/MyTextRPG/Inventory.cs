@@ -10,13 +10,34 @@ namespace MyTextRPG
 {
     public class Inventory : List<Item>
     {
-        public Inventory()
-        {
-        }
-
         public void UseAt(int index)
         {
-            this[index].Use();
+            Item.Types type = this[index].Type;
+
+            switch (type)
+            {
+                case Item.Types.Consumable:
+                    this[index].Use();
+                    this.RemoveAt(index);
+                    break;
+            }
+        }
+
+        public void PrintTop()
+        {
+            Console.WriteLine("====소유한 아이템====");
+            if (this.Count == 0)
+            {
+                Console.WriteLine("없음");
+            }
+            else
+            {
+                for (int i = 0; i < Math.Min(this.Count, 5); i++)
+                {
+                    Console.WriteLine($"{i + 1}. {this[i].Name}");
+                }
+            }
+            Console.WriteLine("=====================");
         }
 
         public void PrintAll()

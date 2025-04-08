@@ -17,7 +17,7 @@ namespace MyTextRPG.Scenes
         {
             PrintMap();
             Console.WriteLine();
-            Game.Player.Inven.PrintAll();
+            Game.Player.Inven.PrintTop();
 
             foreach (GameObject obj in objects)
             {
@@ -29,7 +29,7 @@ namespace MyTextRPG.Scenes
 
         public override void Result()
         {
-            Game.Player.Move(InputKey);
+            Game.Player.Action(InputKey);
 
             foreach(GameObject obj in objects)
             {

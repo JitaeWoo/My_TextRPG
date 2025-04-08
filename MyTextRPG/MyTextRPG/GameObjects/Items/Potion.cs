@@ -8,7 +8,7 @@ namespace MyTextRPG.GameObjects.Items
 {
     public class Potion : Item
     {
-        public Potion(Vector2 position) : base(position)
+        public Potion(Vector2 position) : base(position, Types.Consumable)
         {
             Name = "포션";
             Description = "플레이어의 체력을 소량 회복한다.";

@@ -50,7 +50,27 @@ namespace MyTextRPG
             }
         }
 
-        public void Move(ConsoleKey input)
+        public void Action(ConsoleKey input)
+        {
+            switch (input)
+            {
+                case ConsoleKey.UpArrow:
+                case ConsoleKey.DownArrow:
+                case ConsoleKey.LeftArrow:
+                case ConsoleKey.RightArrow:
+                    Move(input);
+                    break;
+                case ConsoleKey.D1:
+                case ConsoleKey.D2:
+                case ConsoleKey.D3:
+                case ConsoleKey.D4:
+                case ConsoleKey.D5:
+                    Inven.UseAt((int)input - 49);
+                    break;
+            }
+        }
+
+        private void Move(ConsoleKey input)
         {
             Vector2 targetPosition = _position;
 
