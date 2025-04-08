@@ -20,6 +20,12 @@ namespace MyTextRPG
         private int _maxHp;
         public int MaxHp => _maxHp;
 
+        public Player()
+        {
+            _maxHp = 100;
+            _curHp = _maxHp;
+        }
+
         public void Print()
         {
             Console.SetCursorPosition(_position.x, _position.y);
@@ -33,6 +39,14 @@ namespace MyTextRPG
             if(amount > 0)
             {
                 _curHp = Math.Min(_curHp + amount, _maxHp);
+            }
+        }
+
+        public void TakeDamage(int amount)
+        {
+            if(amount > 0)
+            {
+                _curHp = Math.Max(_curHp - amount, 0);
             }
         }
 
