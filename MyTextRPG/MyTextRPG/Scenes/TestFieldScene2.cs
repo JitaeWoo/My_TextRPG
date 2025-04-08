@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace MyTextRPG.Scenes
 {
-    class TestFieldScene : FieldScene
+    class TestFieldScene2 : FieldScene
     {
-        public TestFieldScene()
+        public TestFieldScene2()
         {
             MapData = new string[]
             {
@@ -22,16 +22,15 @@ namespace MyTextRPG.Scenes
             };
 
             IsWall = new bool[MapData.Length, MapData[0].Length];
-            for(int y = 0; y < IsWall.GetLength(0); y++)
+            for (int y = 0; y < IsWall.GetLength(0); y++)
             {
-                for(int x = 0; x < IsWall.GetLength(1); x++)
+                for (int x = 0; x < IsWall.GetLength(1); x++)
                 {
                     IsWall[y, x] = MapData[y][x] == '#';
                 }
             }
 
             objects = new List<GameObject>();
-            objects.Add(new Portal("TestField2", new Vector2(3, 3)));
         }
 
         public override void Enter()
