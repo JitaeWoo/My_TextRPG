@@ -12,6 +12,8 @@ namespace MyTextRPG
         private static Dictionary<string, BaseScene> _sceneDic = new Dictionary<string, BaseScene>();
         private static BaseScene _curScene;
         private static bool _gameOver;
+        private static Player _player;
+        public static Player Player => _player;
         public static void Run()
         {
             Start();
@@ -36,6 +38,8 @@ namespace MyTextRPG
             _sceneDic["TestField"] = new TestFieldScene();
 
             _curScene = _sceneDic["Title"];
+
+            _player = new Player();
 
             _gameOver = false;
         }

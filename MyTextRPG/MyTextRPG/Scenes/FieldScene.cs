@@ -8,26 +8,29 @@ namespace MyTextRPG.Scenes
 {
     public abstract class FieldScene : BaseScene
     {
-        protected String[] mapData;
-        protected bool[,] isWall;
+        protected String[] MapData;
+        protected bool[,] IsWall;
 
         public override void Render()
         {
             PrintMap();
+
+            Game.Player.Print();
         }
 
         public override void Result()
         {
+            Game.Player.Move(InputKey);
         }
 
         private void PrintMap()
         {
             Console.SetCursorPosition(0, 0);
-            for(int y = 0; y < mapData.Length; y++)
+            for(int y = 0; y < MapData.Length; y++)
             {
-                for(int x = 0; x < mapData[0].Length; x++)
+                for(int x = 0; x < MapData[0].Length; x++)
                 {
-                    Console.Write(mapData[y][x]);
+                    Console.Write(MapData[y][x]);
                 }
                 Console.WriteLine();
             }
