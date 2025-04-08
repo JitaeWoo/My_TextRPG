@@ -11,9 +11,16 @@ namespace MyTextRPG.Scenes
         protected String[] MapData;
         public bool[,] IsWall { get; protected set; }
 
+        protected List<GameObject> objects;
+
         public override void Render()
         {
             PrintMap();
+
+            foreach (GameObject obj in objects)
+            {
+                obj.Print();
+            }
 
             Game.Player.Print();
         }
@@ -21,6 +28,19 @@ namespace MyTextRPG.Scenes
         public override void Result()
         {
             Game.Player.Move(InputKey);
+
+            foreach(GameObject obj in objects)
+            {
+                if(Game.Player.Position == obj.Position)
+                {
+                    obj.Interact(Game.Player);
+                    if (obj.IsOnce)
+                    {
+                        objects.Remove(obj);
+                    }
+                    break;
+                }
+            }
         }
 
         private void PrintMap()

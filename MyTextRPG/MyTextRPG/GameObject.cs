@@ -11,7 +11,9 @@ namespace MyTextRPG
         private ConsoleColor _color;
         private char _symbol;
         private Vector2 _position;
+        public Vector2 Position => _position;
         private bool _isOnce;
+        public bool IsOnce => _isOnce;
 
         public GameObject(ConsoleColor color, char symbol, Vector2 position, bool isOnce = false)
         {
