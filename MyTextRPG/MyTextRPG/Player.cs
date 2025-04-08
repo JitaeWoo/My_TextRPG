@@ -67,6 +67,9 @@ namespace MyTextRPG
                 case ConsoleKey.D5:
                     Inven.UseAt((int)input - 49);
                     break;
+                case ConsoleKey.I:
+                    Inven.Open();
+                    break;
             }
         }
 
