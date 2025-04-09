@@ -12,12 +12,10 @@ namespace MyTextRPG.GameObjects.Items
         public int Attack => _attack;
 
         public Weapon(string name, string description, int attack) 
-            : base(new Vector2(1, 1), Types.Weapon)
+            : this(new Vector2(1, 1), name, description, attack)
         {
-            Name = name;
-            Description = description;
-            _attack = attack;
         }
+
         public Weapon(Vector2 position, string name, string description, int attack) 
             : base(position, Types.Weapon)
         {

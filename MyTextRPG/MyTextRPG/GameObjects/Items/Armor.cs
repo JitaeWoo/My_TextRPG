@@ -11,12 +11,9 @@ namespace MyTextRPG.GameObjects.Items
         private int _defense;
         public int Defense => _defense;
 
-        public Armor(string name, string description, int defense) 
-            : base(new Vector2(1, 1), Types.Armor)
+        public Armor(string name, string description, int defense)
+            : this(new Vector2(1, 1), name, description, defense)
         {
-            Name = name;
-            Description = description;
-            _defense = defense;
         }
 
         public Armor(Vector2 position, string name, string description, int defense) 
