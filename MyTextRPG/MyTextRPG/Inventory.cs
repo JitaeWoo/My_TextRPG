@@ -38,6 +38,11 @@ namespace MyTextRPG
 
         public void UseAt(int index)
         {
+            if(index >= this.Count)
+            {
+                return;
+            }
+
             this[index].Use();
             this.RemoveAt(index);
         }
