@@ -13,8 +13,8 @@ namespace MyTextRPG.GameObjects
 
         protected int Attack;
         protected int Defense;
-        protected int CurHp;
-        protected int MaxHp;
+        public int CurHp { get; protected set; }
+        public int MaxHp { get; protected set; }
 
         public Monster(Vector2 position, int attack, int defense, int hp) 
             : base(ConsoleColor.Red, 'M', position, true)
