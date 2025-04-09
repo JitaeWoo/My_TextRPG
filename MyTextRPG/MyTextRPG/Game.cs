@@ -60,6 +60,15 @@ namespace MyTextRPG
             _curScene.Enter();
         }
 
+        public static void ChangeScene(BaseScene scene)
+        {
+            _prevSceneName = _curScene.Name;
+
+            _curScene.End();
+            _curScene = scene;
+            _curScene.Enter();
+        }
+
         public static void GameOver()
         {
             _gameOver = false;
