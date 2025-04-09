@@ -28,7 +28,6 @@ namespace MyTextRPG
                 _curScene.Render();
                 Console.WriteLine();
                 _curScene.Input();
-                Console.WriteLine();
                 _curScene.Result();
                 Console.WriteLine();
             }

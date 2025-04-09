@@ -18,7 +18,7 @@ namespace MyTextRPG.Scenes
             Console.WriteLine("*      My Text RPG      *");
             Console.WriteLine("*************************");
             Console.WriteLine("");
-            Util.PressAnyKey("아무키나 눌러서 시작");
+            Console.WriteLine("아무키나 눌러서 시작");
         }
 
         public override void Result()

@@ -16,6 +16,7 @@ namespace MyTextRPG
 
         public static void PressAnyKey(string text)
         {
+            Console.WriteLine();
             Console.WriteLine(text);
             Console.ReadKey(true);
         }

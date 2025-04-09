@@ -33,7 +33,6 @@ namespace MyTextRPG.Scenes
                 Console.WriteLine();
                 Console.WriteLine("다음 행동을 선택하십시오");
                 Console.WriteLine("1. 공격한다.");
-                Console.WriteLine();
             }
             else
             {
@@ -44,6 +43,7 @@ namespace MyTextRPG.Scenes
                 Console.WriteLine($"{_monster.Name}의 공격!");
                 int damage = _monster.AttackPlayer();
                 Console.WriteLine($"{damage}의 데미지를 입었다!");
+                Console.WriteLine();
                 Console.WriteLine("아무키나 눌러서 계속...");
             }
         }
@@ -56,6 +56,7 @@ namespace MyTextRPG.Scenes
                 {
                     case ConsoleKey.D1:
                         int damage = _monster.TakeDamage(Game.Player.Attack);
+                        Console.WriteLine("플레이어의 공격!");
                         Console.WriteLine($"{_monster.Name}에게 {damage}의 데미지를 입혔다!");
                         break;
                 }
