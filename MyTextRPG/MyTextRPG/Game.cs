@@ -75,6 +75,7 @@ namespace MyTextRPG
 
         private static void PrintGameOver()
         {
+            Console.Clear();
             Console.WriteLine("Game Over!");
         }
     }
