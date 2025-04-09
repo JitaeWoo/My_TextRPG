@@ -27,7 +27,7 @@ namespace MyTextRPG
         public int MaxHp => _maxHp;
 
         private int _attack;
-        public int Attack
+        private int _totalAttack
         {
             get
             {
@@ -39,8 +39,21 @@ namespace MyTextRPG
                 return totalAttack;
             }
         }
+        public int Attack => _totalAttack;
 
         private int _defense;
+        private int _totalDefense
+        {
+            get
+            {
+                int totalDefense = _defense;
+                if(_armor != null)
+                {
+                    totalDefense += _armor.Defense;
+                }
+                return totalDefense;
+            }
+        }
 
         public Player()
         {
@@ -60,7 +73,8 @@ namespace MyTextRPG
 
         public void PrintStats()
         {
-            Console.WriteLine($"플레이어 : 체력 {_curHp} / {_maxHp} 공격력 {_attack} 방어력 {_defense}");
+            Console.WriteLine($"플레이어 : 체력 {_curHp} / {_maxHp} 공격력 {_totalAttack} 방어력 {_totalDefense}");
+        }
         }
 
         public void Equip(Equipment equipment)
