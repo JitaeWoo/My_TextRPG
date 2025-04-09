@@ -30,19 +30,22 @@ namespace MyTextRPG.GameObjects
             // 몬스터와 전투 돌입
         }
 
-        public virtual void AttackPlayer()
+        public virtual int AttackPlayer()
         {
-            Game.Player.TakeDamage(Attack);
+            return Game.Player.TakeDamage(Attack);
         }
 
-        public void TakeDamage(int damage)
+        public int TakeDamage(int damage)
         {
             int totalDamage = damage - Defense;
 
             if(totalDamage > 0)
             {
                 CurHp = Math.Max(totalDamage, 0);
+                return totalDamage;
             }
+
+            return 0;
         }
     }
 }

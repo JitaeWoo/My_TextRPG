@@ -49,14 +49,17 @@ namespace MyTextRPG
             }
         }
 
-        public void TakeDamage(int amount)
+        public int TakeDamage(int amount)
         {
             amount -= _defense;
 
             if(amount > 0)
             {
                 _curHp = Math.Max(_curHp - amount, 0);
+                return amount;
             }
+
+            return 0;
         }
 
         public void Action(ConsoleKey input)
