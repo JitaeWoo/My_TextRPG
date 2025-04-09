@@ -38,15 +38,8 @@ namespace MyTextRPG
 
         public void UseAt(int index)
         {
-            Item.Types type = this[index].Type;
-
-            switch (type)
-            {
-                case Item.Types.Consumable:
-                    this[index].Use();
-                    this.RemoveAt(index);
-                    break;
-            }
+            this[index].Use();
+            this.RemoveAt(index);
         }
 
         public void Open()
