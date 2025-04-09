@@ -16,6 +16,7 @@ namespace MyTextRPG.Scenes
             Console.WriteLine();
             Console.WriteLine("1. 나무 검을 산다. 100G");
             Console.WriteLine("2. 천 갑옷을 산다. 150G");
+            Console.WriteLine("3. 돌 목걸이를 산다. 80G");
             Console.WriteLine("0. 돌아간다.");
         }
 
@@ -45,6 +46,18 @@ namespace MyTextRPG.Scenes
                     {
                         Game.Player.Inven.PayGold(150);
                         Game.Player.Inven.Add(new Armor("가죽 갑옷", "평범한 가죽 갑옷, 방어력을 2 높인다.", 2));
+                    }
+                    break;
+                case ConsoleKey.D3:
+                    if (Game.Player.Inven.Gold < 80)
+                    {
+                        Console.WriteLine("골드가 부족합니다.");
+                        Util.PressAnyKey();
+                    }
+                    else
+                    {
+                        Game.Player.Inven.PayGold(80);
+                        Game.Player.Inven.Add(new Accessory("돌 목결이", "착용자의 체력을 올려주는 목걸이, 체력을 5 높인다.", 5));
                     }
                     break;
                 case ConsoleKey.D0:
