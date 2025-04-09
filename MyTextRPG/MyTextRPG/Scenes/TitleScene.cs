@@ -8,6 +8,10 @@ namespace MyTextRPG.Scenes
 {
     public class TitleScene : BaseScene
     {
+        public TitleScene()
+        {
+            Name = "TitleScene";
+        }
         public override void Render()
         {
             Console.WriteLine("*************************");

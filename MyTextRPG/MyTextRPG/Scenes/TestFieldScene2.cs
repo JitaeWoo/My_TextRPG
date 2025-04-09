@@ -11,6 +11,8 @@ namespace MyTextRPG.Scenes
     {
         public TestFieldScene2()
         {
+            Name = "TestFieldScene2";
+
             MapData = new string[]
             {
                 "########",

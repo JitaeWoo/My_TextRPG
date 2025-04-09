@@ -9,6 +9,7 @@ namespace MyTextRPG
     public abstract class BaseScene
     {
         protected ConsoleKey InputKey;
+        public string Name { get; protected set; }
         public abstract void Render();
 
         public void Input()
