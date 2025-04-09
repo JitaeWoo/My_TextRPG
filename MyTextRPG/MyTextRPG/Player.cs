@@ -118,6 +118,7 @@ namespace MyTextRPG
                         _inventory.Add(_accessory);
                     }
                     _accessory = (equipment as Accessory);
+                    _curHp = Math.Min(_totalMaxHp, _curHp);
                     break;
             }
         }
