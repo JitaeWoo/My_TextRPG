@@ -52,6 +52,11 @@ namespace MyTextRPG.Scenes
         {
             if(_curTurn == "Player")
             {
+                if(InputKey != ConsoleKey.D1)
+                {
+                    return;
+                }
+
                 switch (InputKey)
                 {
                     case ConsoleKey.D1:
