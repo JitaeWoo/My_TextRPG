@@ -35,9 +35,14 @@ namespace MyTextRPG.GameObjects
             Game.Player.TakeDamage(Attack);
         }
 
-        public void TakeDamage()
+        public void TakeDamage(int damage)
         {
-            int damage = Game.Player.Attack - Defense;
+            int totalDamage = damage - Defense;
+
+            if(totalDamage > 0)
+            {
+                CurHp = Math.Max(totalDamage, 0);
+            }
         }
     }
 }
