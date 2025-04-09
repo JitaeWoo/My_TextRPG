@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyTextRPG.GameObjects.Items
+namespace MyTextRPG.GameObjects.Items.Equipments
 {
     public class Weapon : Equipment
     {
