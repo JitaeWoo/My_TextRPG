@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MyTextRPG.GameObjects;
 using MyTextRPG.GameObjects.Items;
+using MyTextRPG.GameObjects.Items.Equipments;
 using MyTextRPG.Scenes;
 
 namespace MyTextRPG

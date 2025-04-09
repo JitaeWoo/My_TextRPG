@@ -1,4 +1,4 @@
-﻿using MyTextRPG.GameObjects.Items;
+﻿using MyTextRPG.GameObjects.Items.Equipments;
 using System;
 using System.Collections.Generic;
 using System.Linq;
