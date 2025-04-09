@@ -70,7 +70,7 @@ namespace MyTextRPG
 
         public static void GameOver()
         {
-            _gameOver = false;
+            _gameOver = true;
         }
 
         private static void PrintGameOver()
