@@ -20,11 +20,24 @@ namespace MyTextRPG
 
         private Weapon _weapon;
         private Armor _armor;
+        private Accessory _accessory;
 
         private int _curHp;
         public int CurHp => _curHp;
         private int _maxHp;
-        public int MaxHp => _maxHp;
+        private int _totalMaxHp
+        {
+            get
+            {
+                int totalMaxHp = _maxHp;
+                if(_accessory != null)
+                {
+                    totalMaxHp += _accessory.Hp;
+                }
+                return totalMaxHp;
+            }
+        }
+        public int MaxHp => _totalMaxHp;
 
         private int _attack;
         private int _totalAttack
@@ -73,7 +86,7 @@ namespace MyTextRPG
 
         public void PrintStats()
         {
-            Console.WriteLine($"플레이어 : 체력 {_curHp} / {_maxHp} 공격력 {_totalAttack} 방어력 {_totalDefense}");
+            Console.WriteLine($"플레이어 : 체력 {_curHp} / {_totalMaxHp} 공격력 {_totalAttack} 방어력 {_totalDefense}");
         }
 
         public void PrintEquipment()
@@ -99,6 +112,13 @@ namespace MyTextRPG
                     }
                     _armor = (equipment as Armor);
                     break;
+                case Item.Types.Accessory:
+                    if(_accessory != null)
+                    {
+                        _inventory.Add(_accessory);
+                    }
+                    _accessory = (equipment as Accessory);
+                    break;
             }
         }
 
@@ -106,7 +126,7 @@ namespace MyTextRPG
         {
             if(amount > 0)
             {
-                _curHp = Math.Min(_curHp + amount, _maxHp);
+                _curHp = Math.Min(_curHp + amount, _totalMaxHp);
             }
         }
 
