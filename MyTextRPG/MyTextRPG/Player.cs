@@ -75,6 +75,10 @@ namespace MyTextRPG
         {
             Console.WriteLine($"플레이어 : 체력 {_curHp} / {_maxHp} 공격력 {_totalAttack} 방어력 {_totalDefense}");
         }
+
+        public void PrintEquipment()
+        {
+            Console.WriteLine($"무기 : {_weapon?.Name}  방어구 : {_armor?.Name}");
         }
 
         public void Equip(Equipment equipment)

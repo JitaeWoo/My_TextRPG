@@ -19,6 +19,8 @@ namespace MyTextRPG.Scenes
             Console.WriteLine();
             Game.Player.PrintStats();
             Console.WriteLine();
+            Game.Player.PrintEquipment();
+            Console.WriteLine();
             Game.Player.Inven.PrintTop();
 
             foreach (GameObject obj in objects)

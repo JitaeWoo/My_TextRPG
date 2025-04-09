@@ -20,6 +20,8 @@ namespace MyTextRPG.Scenes
             Console.WriteLine("1. 마을 밖으로 나가본다.");
             Console.WriteLine("2. 상점으로 들어간다.");
             Console.WriteLine("3. 소지품을 확인한다.");
+            Console.WriteLine();
+            Game.Player.PrintEquipment();
         }
 
         public override void Result()
