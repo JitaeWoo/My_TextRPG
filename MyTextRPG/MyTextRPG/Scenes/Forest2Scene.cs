@@ -9,19 +9,19 @@ using System.Threading.Tasks;
 
 namespace MyTextRPG.Scenes
 {
-    class Forest1Scene : FieldScene
+    class Forest2Scene : FieldScene
     {
-        public Forest1Scene()
+        public Forest2Scene()
         {
-            Name = "Forest1";
+            Name = "Forest2";
 
             MapData = new string[]
             {
                 "########",
-                "#      #",
-                "#####  #",
-                "#      #",
-                "#  #####",
+                "#    # #",
+                "#    # #",
+                "#    # #",
+                "###    #",
                 "#      #",
                 "########"
             };
@@ -35,21 +35,24 @@ namespace MyTextRPG.Scenes
                 }
             }
 
-            objects.Add(new Portal("Town", new Vector2(1, 1)));
-            objects.Add(new Portal("Forest2", new Vector2(6, 5)));
-            objects.Add(new Potion(new Vector2(1, 3)));
-            objects.Add(new Goblin(new Vector2(3, 3)));
+            objects.Add(new Portal("Forest1", new Vector2(1, 1)));
+            objects.Add(new Goblin(new Vector2(6, 3)));
+            Wall wall = new Wall(new Vector2(2, 5), Directions.Right);
+            Button button = new Button(new Vector2(6, 1));
+            button.OnClicked += () =>
+            {
+                objects.Remove(wall);
+            };
+            objects.Add(wall);
+            objects.Add(button);
+            objects.Add(new Portal("Forest1", new Vector2(1, 1)));
         }
 
         public override void Enter()
         {
-            if(Game.PrevSceneName == "Town")
+            if (Game.PrevSceneName == "Forest1")
             {
                 Game.Player.Position = new Vector2(1, 1);
-            }
-            else if(Game.PrevSceneName == "Forest2")
-            {
-                Game.Player.Position = new Vector2(6, 5);
             }
         }
     }
