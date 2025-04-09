@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyTextRPG.GameObjects.Items
 {
-    public class Weapon : Item
+    public class Weapon : Equipment
     {
         private int _attack;
         public int Attack => _attack;
