@@ -41,6 +41,11 @@ namespace MyTextRPG
             Console.ResetColor();
         }
 
+        public void PrintStats()
+        {
+            Console.WriteLine($"플레이어 : 체력 {_curHp} / {_maxHp} 공격력 {_attack} 방어력 {_defense}");
+        }
+
         public void Heal(int amount)
         {
             if(amount > 0)

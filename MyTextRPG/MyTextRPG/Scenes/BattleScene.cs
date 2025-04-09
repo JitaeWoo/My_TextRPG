@@ -25,9 +25,11 @@ namespace MyTextRPG.Scenes
 
         public override void Render()
         {
-            if(_curTurn == "Player")
+            if (_curTurn == "Player")
             {
                 Console.WriteLine($"========플레이어 턴========");
+                Console.WriteLine();
+                Game.Player.PrintStats();
                 Console.WriteLine();
                 Console.WriteLine($"{_monster.Name} : [{_monster.CurHp} / {_monster.MaxHp}]");
                 Console.WriteLine();
@@ -38,6 +40,8 @@ namespace MyTextRPG.Scenes
             {
                 Console.WriteLine($"=========몬스터 턴=========");
                 Console.WriteLine();
+                Game.Player.PrintStats();
+                Console.WriteLine();
                 Console.WriteLine($"{_monster.Name} : [{_monster.CurHp} / {_monster.MaxHp}]");
                 Console.WriteLine();
                 Console.WriteLine($"{_monster.Name}의 공격!");
@@ -46,6 +50,7 @@ namespace MyTextRPG.Scenes
                 Console.WriteLine();
                 Console.WriteLine("아무키나 눌러서 계속...");
             }
+
         }
 
         public override void Result()

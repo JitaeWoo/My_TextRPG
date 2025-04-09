@@ -17,6 +17,8 @@ namespace MyTextRPG.Scenes
         {
             PrintMap();
             Console.WriteLine();
+            Game.Player.PrintStats();
+            Console.WriteLine();
             Game.Player.Inven.PrintTop();
 
             foreach (GameObject obj in objects)
