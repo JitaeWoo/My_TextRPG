@@ -23,7 +23,7 @@ namespace MyTextRPG.Scenes
 
         public override void Result()
         {
-            Game.ChangeScene("TestField");
+            Game.ChangeScene("Town");
         }
     }
 }
