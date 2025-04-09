@@ -10,7 +10,7 @@ namespace MyTextRPG.GameObjects
     {
         public enum Types
         {
-            Consumable, Armor, Weapon
+            Consumable, Armor, Weapon, Accessory
         }
 
         private Types _type;
