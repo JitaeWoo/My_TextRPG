@@ -17,6 +17,24 @@ namespace MyTextRPG
         }
         private Stack<State> _stack = new Stack<State>();
         private int _selectedIndex;
+        private int _gold = 100;
+        public int Gold => _gold;
+
+        public void GetGold(int gold)
+        {
+            if(gold > 0)
+            {
+                _gold += gold;
+            }
+        }
+
+        public void PayGold(int price)
+        {
+            if(price > 0)
+            {
+                _gold -= price;
+            }
+        }
 
         public void UseAt(int index)
         {
@@ -177,6 +195,11 @@ namespace MyTextRPG
                 }
             }
             Console.WriteLine("=====================");
+        }
+
+        public void PrintGold()
+        {
+            Console.WriteLine($"현재 소지금 : {_gold}G");
         }
     }
 }
