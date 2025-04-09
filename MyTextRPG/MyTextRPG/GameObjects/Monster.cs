@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using MyTextRPG.Scenes;
 
 namespace MyTextRPG.GameObjects
 {
@@ -27,7 +28,7 @@ namespace MyTextRPG.GameObjects
 
         public override void Interact()
         {
-            // 몬스터와 전투 돌입
+            Game.ChangeScene(new BattleScene(this));
         }
 
         public virtual int AttackPlayer()
