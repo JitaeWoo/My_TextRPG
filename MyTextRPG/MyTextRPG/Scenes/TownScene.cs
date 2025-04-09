@@ -19,7 +19,8 @@ namespace MyTextRPG.Scenes
             Console.WriteLine();
             Console.WriteLine("1. 마을 밖으로 나가본다.");
             Console.WriteLine("2. 상점으로 들어간다.");
-            Console.WriteLine("3. 소지품을 확인한다.");
+            Console.WriteLine("3. 여관으로 들어간다.");
+            Console.WriteLine("4. 소지품을 확인한다.");
             Console.WriteLine();
             Game.Player.PrintEquipment();
         }
@@ -35,6 +36,9 @@ namespace MyTextRPG.Scenes
                     Game.ChangeScene("TownShop");
                     break;
                 case ConsoleKey.D3:
+                    Game.ChangeScene("Inn");
+                    break;
+                case ConsoleKey.D4:
                     Game.Player.Inven.Open();
                     break;
             }
