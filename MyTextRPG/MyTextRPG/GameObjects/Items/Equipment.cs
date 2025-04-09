@@ -20,7 +20,7 @@ namespace MyTextRPG.GameObjects.Items
 
         public override void Use()
         {
-            throw new NotImplementedException();
+            Game.Player.Equip(this);
         }
     }
 }

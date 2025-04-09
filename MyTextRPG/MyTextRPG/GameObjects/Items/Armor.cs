@@ -23,10 +23,5 @@ namespace MyTextRPG.GameObjects.Items
             Description = description;
             _defense = defense;
         }
-
-        public override void Use()
-        {
-            // 플레이어 방어구 슬롯에 장착
-        }
     }
 }
