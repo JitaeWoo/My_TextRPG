@@ -10,7 +10,7 @@ namespace MyTextRPG.Scenes
     {
         public TitleScene()
         {
-            Name = "TitleScene";
+            Name = "Title";
         }
         public override void Render()
         {
