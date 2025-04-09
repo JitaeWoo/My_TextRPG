@@ -29,7 +29,7 @@ namespace MyTextRPG.Scenes
                     Game.ChangeScene("Forest1");
                     break;
                 case ConsoleKey.D2:
-                    Game.ChangeScene("Shop");
+                    Game.ChangeScene("TownShop");
                     break;
             }
         }

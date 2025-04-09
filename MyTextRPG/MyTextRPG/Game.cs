@@ -41,6 +41,7 @@ namespace MyTextRPG
 
             _sceneDic["Title"] = new TitleScene();
             _sceneDic["Town"] = new TownScene();
+            _sceneDic["TownShop"] = new TownShopScene();
             _sceneDic["TestField"] = new TestFieldScene();
             _sceneDic["TestField2"] = new TestFieldScene2();
 
