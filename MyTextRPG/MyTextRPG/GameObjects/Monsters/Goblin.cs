@@ -11,6 +11,7 @@ namespace MyTextRPG.GameObjects.Monsters
         public Goblin(Vector2 position) 
             : base(position, 10, 1, 30)
         {
+            Name = "고블린";
         }
     }
 }

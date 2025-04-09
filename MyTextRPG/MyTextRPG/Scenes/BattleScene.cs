@@ -18,7 +18,6 @@ namespace MyTextRPG.Scenes
 
             _monster = monster;
 
-            _battleSequence.Enqueue("Player");
             _battleSequence.Enqueue(_monster.Name);
 
             _curTurn = "Player";
@@ -30,7 +29,7 @@ namespace MyTextRPG.Scenes
             {
                 Console.WriteLine($"========플레이어 턴========");
                 Console.WriteLine();
-                Console.WriteLine($"{_monster.Name} : [{_monster.CurHp} / {_monster.MaxHp}");
+                Console.WriteLine($"{_monster.Name} : [{_monster.CurHp} / {_monster.MaxHp}]");
                 Console.WriteLine();
                 Console.WriteLine("다음 행동을 선택하십시오");
                 Console.WriteLine("1. 공격한다.");
@@ -40,7 +39,7 @@ namespace MyTextRPG.Scenes
             {
                 Console.WriteLine($"=========몬스터 턴=========");
                 Console.WriteLine();
-                Console.WriteLine($"{_monster.Name} : [{_monster.CurHp} / {_monster.MaxHp}");
+                Console.WriteLine($"{_monster.Name} : [{_monster.CurHp} / {_monster.MaxHp}]");
                 Console.WriteLine();
                 Console.WriteLine($"{_monster.Name}의 공격!");
                 int damage = _monster.AttackPlayer();
@@ -60,19 +59,25 @@ namespace MyTextRPG.Scenes
                         Console.WriteLine($"{_monster.Name}에게 {damage}의 데미지를 입혔다!");
                         break;
                 }
-            }
 
-            if(_monster.CurHp <= 0)
-            {
-                Console.WriteLine("승리했습니다!!");
+                if (_monster.CurHp <= 0)
+                {
+                    Console.WriteLine("승리했습니다!!");
+                    Game.ChangeScene(Game.PrevSceneName);
+                }
+
+                Util.PressAnyKey();
             }
-            else if(Game.Player.CurHp <= 0)
+            else 
             {
-                Console.WriteLine("패배하였습니다...");
-                Game.GameOver();
+                if (Game.Player.CurHp <= 0)
+                {
+                    Console.WriteLine("패배하였습니다...");
+                    Game.GameOver();
+                    Util.PressAnyKey();
+                }
             } 
 
-            Util.PressAnyKey();
 
             _battleSequence.Enqueue(_curTurn);
             _curTurn = _battleSequence.Dequeue();

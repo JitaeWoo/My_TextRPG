@@ -42,7 +42,7 @@ namespace MyTextRPG.GameObjects
 
             if(totalDamage > 0)
             {
-                CurHp = Math.Max(totalDamage, 0);
+                CurHp = Math.Max(CurHp - totalDamage, 0);
                 return totalDamage;
             }
 
