@@ -39,7 +39,10 @@ namespace MyTextRPG.Scenes
 
         public override void Enter()
         {
-            Game.Player.Position = new Vector2(1, 1);
+            if(Game.PrevSceneName == "Title")
+            {
+                Game.Player.Position = new Vector2(1, 1);
+            }
         }
     }
 }

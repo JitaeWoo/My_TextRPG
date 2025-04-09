@@ -12,6 +12,9 @@ namespace MyTextRPG
         private static Dictionary<string, BaseScene> _sceneDic = new Dictionary<string, BaseScene>();
         private static BaseScene _curScene;
         public static BaseScene CurScene => _curScene;
+        private static string _prevSceneName;
+        public static string PrevSceneName => _prevSceneName;
+
         private static bool _gameOver;
         private static Player _player;
         public static Player Player => _player;
@@ -50,6 +53,8 @@ namespace MyTextRPG
 
         public static void ChangeScene(string scene)
         {
+            _prevSceneName = _curScene.Name;
+
             _curScene.End();
             _curScene = _sceneDic[scene];
             _curScene.Enter();
