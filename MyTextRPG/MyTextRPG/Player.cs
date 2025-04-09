@@ -91,7 +91,7 @@ namespace MyTextRPG
 
         public void PrintEquipment()
         {
-            Console.WriteLine($"무기 : {_weapon?.Name}  방어구 : {_armor?.Name}");
+            Console.WriteLine($"무기 : {_weapon?.Name}  방어구 : {_armor?.Name}  장신구 : {_accessory?.Name}");
         }
 
         public void Equip(Equipment equipment)
