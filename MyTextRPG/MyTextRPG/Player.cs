@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MyTextRPG.GameObjects;
+using MyTextRPG.GameObjects.Items;
 using MyTextRPG.Scenes;
 
 namespace MyTextRPG
@@ -15,13 +17,27 @@ namespace MyTextRPG
         private Inventory _inventory = new Inventory();
         public Inventory Inven => _inventory;
 
+        private Weapon _weapon;
+        private Armor _armor;
+
         private int _curHp;
         public int CurHp => _curHp;
         private int _maxHp;
         public int MaxHp => _maxHp;
 
         private int _attack;
-        public int Attack => _attack;
+        public int Attack
+        {
+            get
+            {
+                int totalAttack = _attack;
+                if(_weapon != null)
+                {
+                    totalAttack += _weapon.Attack;
+                }
+                return totalAttack;
+            }
+        }
 
         private int _defense;
 
@@ -46,6 +62,27 @@ namespace MyTextRPG
             Console.WriteLine($"플레이어 : 체력 {_curHp} / {_maxHp} 공격력 {_attack} 방어력 {_defense}");
         }
 
+        public void Equip(Equipment equipment)
+        {
+            switch (equipment.Type)
+            {
+                case Item.Types.Weapon:
+                    if(_weapon != null)
+                    {
+                        _inventory.Add(_weapon);
+                    }
+                    _weapon = (equipment as Weapon);
+                    break;
+                case Item.Types.Armor:
+                    if (_armor != null)
+                    {
+                        _inventory.Add(_armor);
+                    }
+                    _armor = (equipment as Armor);
+                    break;
+            }
+        }
+
         public void Heal(int amount)
         {
             if(amount > 0)
@@ -57,6 +94,10 @@ namespace MyTextRPG
         public int TakeDamage(int amount)
         {
             amount -= _defense;
+            if(_armor != null)
+            {
+                amount -= _armor.Defense;
+            }
 
             if(amount > 0)
             {
