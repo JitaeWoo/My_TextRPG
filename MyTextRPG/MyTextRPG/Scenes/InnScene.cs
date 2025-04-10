@@ -35,6 +35,7 @@ namespace MyTextRPG.Scenes
                     {
                         Game.Player.Inven.PayGold(10);
                         Game.Player.Heal(Game.Player.MaxHp);
+                        Game.SleepPlayer();
                     }
                     break;
                 case ConsoleKey.D0:

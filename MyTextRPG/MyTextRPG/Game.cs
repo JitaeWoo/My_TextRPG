@@ -18,6 +18,8 @@ namespace MyTextRPG
         private static bool _gameOver;
         private static Player _player;
         public static Player Player => _player;
+
+        public static event Action OnSleeped;
         public static void Run()
         {
             Start();
@@ -82,6 +84,11 @@ namespace MyTextRPG
         {
             Console.Clear();
             Console.WriteLine("Game Over!");
+        }
+
+        public static void SleepPlayer()
+        {
+            OnSleeped?.Invoke();
         }
     }
 }
