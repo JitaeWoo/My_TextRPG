@@ -12,7 +12,7 @@ namespace MyTextRPG
         public string Name { get; protected set; }
         public abstract void Render();
 
-        public void Input()
+        public virtual void Input()
         {
             InputKey = Console.ReadKey(true).Key;
         }
