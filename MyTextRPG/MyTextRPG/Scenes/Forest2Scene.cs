@@ -36,7 +36,11 @@ namespace MyTextRPG.Scenes
             }
 
             objects.Add(new Portal("Forest1", new Vector2(1, 1)));
-            objects.Add(new Goblin(new Vector2(6, 3)));
+            MonsterGroup monsterGroup = new MonsterGroup(new Vector2(6, 3));
+            monsterGroup.MonsterList.Add(new Goblin());
+            monsterGroup.MonsterList.Add(new Goblin());
+            monsterGroup.MonsterList.Add(new Goblin());
+            objects.Add(monsterGroup);
             Wall wall = new Wall(new Vector2(2, 5), Directions.Right);
             Button button = new Button(new Vector2(6, 1));
             button.OnClicked += () =>
@@ -45,7 +49,6 @@ namespace MyTextRPG.Scenes
             };
             objects.Add(wall);
             objects.Add(button);
-            objects.Add(new Portal("Forest1", new Vector2(1, 1)));
         }
 
         public override void Enter()
