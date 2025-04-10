@@ -12,9 +12,9 @@ namespace MyTextRPG.GameObjects
     {
         public string Name { get; protected set; }
 
-        protected int Attack;
-        protected int Defense;
-        public int CurHp { get; protected set; }
+        public int Attack { get; protected set; }
+        public int Defense { get; protected set; }
+        public int CurHp;
         public int MaxHp { get; protected set; }
 
         public Monster(Vector2 position, int attack, int defense, int hp) 
