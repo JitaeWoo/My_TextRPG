@@ -29,6 +29,11 @@ namespace MyTextRPG.GameObjects
         {
             if (isSpawned)
             {
+                for(int i = 0; i < _monsterGroup.MonsterList.Count; i++)
+                {
+                    _monsterGroup.MonsterList[i].CurHp = _monsterGroup.MonsterList[i].MaxHp;
+                }
+
                 Game.ChangeScene(new BattleScene(_monsterGroup.MonsterList));
                 Symbol = ' ';
                 isSpawned = false;
