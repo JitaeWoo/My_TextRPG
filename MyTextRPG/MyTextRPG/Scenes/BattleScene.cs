@@ -209,6 +209,11 @@ namespace MyTextRPG.Scenes
                 case ConsoleKey.D5:
                     int index = (int)InputKey - (int)ConsoleKey.D1;
 
+                    if (_monsters[index].CurHp <= 0)
+                    {
+                        return;
+                    }
+
                     int damage = _monsters[index].TakeDamage(Game.Player.Attack);
 
                     Console.WriteLine($"{_monsters[index].Name}에게 {damage}의 데미지를 입혔다!");
