@@ -38,7 +38,7 @@ namespace MyTextRPG.Scenes
             objects.Add(new Portal("Town", new Vector2(1, 1)));
             objects.Add(new Portal("Forest2", new Vector2(6, 5)));
             objects.Add(new Potion(new Vector2(1, 3)));
-            objects.Add(new Goblin(new Vector2(3, 3)));
+            objects.Add(new MonsterSpawner(new Vector2(3, 3), new Goblin()));
         }
 
         public override void Enter()
