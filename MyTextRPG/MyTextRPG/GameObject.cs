@@ -10,7 +10,7 @@ namespace MyTextRPG
     {
         private ConsoleColor _color;
         private char _symbol;
-        protected char Symbol { set { _symbol = value } }
+        protected char Symbol { set { _symbol = value; } }
         private Vector2 _position;
         public Vector2 Position => _position;
         private bool _isOnce;
